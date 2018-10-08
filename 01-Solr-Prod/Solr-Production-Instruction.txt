@@ -1,0 +1,21 @@
+PRE-REQUISITIES:
+
+Update Parameters
+a. $downloadFolder = "C:\Users\hiadmin\Downloads"
+b. $pfxFile = "2018-hi.zone.pfx"
+c. $thumbprint = "34E7C208981FEB7EA0DC56D5471DD21DEF6F1F42"
+d. $certpassword = "xWmk18OJjDqe3nEHKwr9h4po2Mslc57zaiYGFbPNfIuVUdRT0B"
+
+
+
+e. Copy certificate to downloads folder
+f. Download JRE
+g. Install JRE
+h. Change directory name of JRE folder to Jre-1.8.0
+i. Set the JAVA_HOME path. 
+j. Import the certificate to Local Machine
+	a. Automatically install the certificate to store
+	b. The certificate should be in your personal\certificate path
+	c. change the friendly name to solr-6.6.2
+	d. copy the certificate to Trusted Root Certification Authorities. 
+	
