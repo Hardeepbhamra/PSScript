@@ -2,7 +2,7 @@
     $solrVersion = "6.6.2",
     $installFolder = "c:\solr",
     $solrPort = "8983",
-    $solrHost = "solr.hi.zone",
+    $solrHost = "",
     $solrSSL = $true,
     $nssmVersion = "2.24",
     $JREVersion = "1.8.0"

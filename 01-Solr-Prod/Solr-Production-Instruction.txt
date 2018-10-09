@@ -5,6 +5,7 @@ a. $downloadFolder = "C:\Users\hiadmin\Downloads"
 b. $pfxFile = ""
 c. $thumbprint = ""
 d. $certpassword = ""
+e. $solrHost = ""
 
 
 
