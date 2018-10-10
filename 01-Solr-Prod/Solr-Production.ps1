@@ -18,7 +18,7 @@ $nssmRoot = "$installFolder\nssm-$nssmVersion"
 $solrPackage = "http://archive.apache.org/dist/lucene/solr/$solrVersion/$solrName.zip"
 $nssmPackage = "http://nssm.cc/release/nssm-$nssmVersion.zip"
 #$downloadFolder = "~\Downloads"
-$downloadFolder = "C:\Users\hiadmin\Downloads"
+$downloadFolder = ""
 $pfxFile = ""
 $thumbprint = ""
 $certpassword = ""
@@ -99,7 +99,7 @@ if($solrSSL -eq $true)
         # https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps
         #$cert = New-SelfSignedCertificate -FriendlyName "$solrName" -DnsName "$solrHost" -CertStoreLocation "cert:\LocalMachine" -NotAfter (Get-Date).AddYears(10)
         $certPwd = ConvertTo-SecureString -String "$certpassword" -Force -AsPlainText
-        $cert = Import-PfxCertificate -FilePath C:\Users\hiadmin\Downloads\$pfxFile -CertStoreLocation Cert:\LocalMachine\Root -Password $certPwd -Exportable -Verbose
+        $cert = Import-PfxCertificate -FilePath $downloadFolder\$pfxFile -CertStoreLocation Cert:\LocalMachine\Root -Password $certPwd -Exportable -Verbose
         # Trust the cert
         # https://stackoverflow.com/questions/8815145/how-to-trust-a-certificate-in-windows-powershell
         $store = New-Object System.Security.Cryptography.X509Certificates.X509Store "Root","LocalMachine"
@@ -118,7 +118,7 @@ if($solrSSL -eq $true)
 
         #$cert = Get-ChildItem Cert:\LocalMachine\Root | where FriendlyName -eq "$solrName"
         $certPwd = ConvertTo-SecureString -String "$certpassword" -Force -AsPlainText
-        Import-PfxCertificate -FilePath C:\Users\hiadmin\Downloads\$pfxFile -Password $certPwd -Exportable
+        Import-PfxCertificate -FilePath $downloadFolder\$pfxFile -Password $certPwd -Exportable
         $cert = Get-ChildItem Cert:\LocalMachine\Root | where{$_.Thumbprint -eq "$thumbprint"}
     
         $certStore = "$solrRoot\server\etc\$pfxFile"
